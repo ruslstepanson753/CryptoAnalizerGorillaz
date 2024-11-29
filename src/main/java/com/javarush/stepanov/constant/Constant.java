@@ -15,6 +15,8 @@ public class Constant {
     public static final String RESULT_DECODE_OK_MESSAGE = "decode operation was successful";
     public static final String RESULT_ENCODE_OK_MESSAGE = "encode operation was successful";
     public static final String RESULT_BRUDEFORCE_OK_MESSAGE = "brudeforce operation was successful";
+    public static final String RESULT_ANALIZE_OK_MESSAGE = "analize operation was successful";
+
 
     public static final String TXT_FOLDER = System.getProperty("user.dir")+ File.separator+"text"+File.separator;
 

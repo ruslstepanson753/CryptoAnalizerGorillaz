@@ -1,9 +1,6 @@
 package com.javarush.stepanov.controller;
 
-import com.javarush.stepanov.commands.Action;
-import com.javarush.stepanov.commands.BrudeForce;
-import com.javarush.stepanov.commands.Decode;
-import com.javarush.stepanov.commands.Encode;
+import com.javarush.stepanov.commands.*;
 import com.javarush.stepanov.exceptions.AppException;
 
 import static com.javarush.stepanov.constant.Constant.EXCEPTION_ILLEGAL_COMMAND;
@@ -11,7 +8,8 @@ import static com.javarush.stepanov.constant.Constant.EXCEPTION_ILLEGAL_COMMAND;
 public enum Actions {
     DECODE(new Decode()),
     ENCODE(new Encode ()),
-    BRUDEFORCE(new BrudeForce());
+    BRUDEFORCE(new BrudeForce()),
+    ANALIZE(new Analize());
 
     private final Action action;
 
