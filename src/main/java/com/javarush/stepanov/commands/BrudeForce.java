@@ -6,7 +6,7 @@ import com.javarush.stepanov.model.ResultCode;
 import static com.javarush.stepanov.constant.Constant.RESULT_BRUDEFORCE_OK_MESSAGE;
 import static com.javarush.stepanov.constant.Constant.RESULT_DECODE_OK_MESSAGE;
 
-public class BrudeForce implements Action{
+public class BrudeForce extends AbstractAction{
     @Override
     public Result execute(String[] parametrs) {
 

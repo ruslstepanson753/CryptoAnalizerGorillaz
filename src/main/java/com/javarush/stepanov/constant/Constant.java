@@ -7,10 +7,10 @@ public class Constant {
     private static final String NUMBERS = "0123456789";
     private static final String SYMBOLS = "\n☮.,”’:-!? ";
     public static final String ALPHABET = LETTERS + NUMBERS + SYMBOLS;
-    public static final char[] ALPHABET_CHAR_ARRAY= ALPHABET.toCharArray();
 
     public static final String EXCEPTION_NO_ARGS = "there is no args";
     public static final String EXCEPTION_ILLEGAL_COMMAND = "the command was entered incorrectly";
+    public static final String EXCEPTION_FILE_READ_WRITE = "An error occurred while reading or writing the file";
 
     public static final String RESULT_DECODE_OK_MESSAGE = "decode operation was successful";
     public static final String RESULT_ENCODE_OK_MESSAGE = "encode operation was successful";
