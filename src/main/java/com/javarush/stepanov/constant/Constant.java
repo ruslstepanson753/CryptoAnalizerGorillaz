@@ -1,5 +1,7 @@
 package com.javarush.stepanov.constant;
 
+import java.io.File;
+
 public class Constant {
     private static final String LETTERS = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
     private static final String NUMBERS = "0123456789";
@@ -8,5 +10,11 @@ public class Constant {
     public static final char[] ALPHABET_CHAR_ARRAY= ALPHABET.toCharArray();
 
     public static final String EXCEPTION_NO_ARGS = "there is no args";
+    public static final String EXCEPTION_ILLEGAL_COMMAND = "the command was entered incorrectly";
+
+    public static final String RESULT_DECODE_OK_MESSAGE = "decode operation was successful";
+    public static final String RESULT_ENCODE_OK_MESSAGE = "encode operation was successful";
+
+    public static final String TXT_FOLDER = System.getProperty("user.dir")+ File.separator+"text"+File.separator;
 
 }

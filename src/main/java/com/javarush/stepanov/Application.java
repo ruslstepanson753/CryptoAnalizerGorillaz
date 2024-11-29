@@ -10,7 +10,7 @@ import static com.javarush.stepanov.constant.Constant.EXCEPTION_NO_ARGS;
 
 public class Application {
 
-   private MainController mainController;
+   private final MainController mainController;
 
     public Result run(String[]args){
         if (args.length >0) {
