@@ -34,11 +34,13 @@ public class Analyze extends AbstractAction {
             while ((value = reader.read()) > -1) {
                 char character = (char) value;
                 int index = sourceChar.indexOf(character);
-                Character characterDecrypted = dictChar.get(index);
-                writer.write(
-                        characterDecrypted != null
-                                ? characterDecrypted
-                                : character);
+                if (index != -1) {
+                    Character characterDecrypted = dictChar.get(index);
+                    writer.write(characterDecrypted);
+                } else {
+                    // Если символ не найден в sourceChar, записываем оригинальный символ
+                    writer.write(character);
+                }
             }
         } catch (IOException e) {
             throw new AppException(e.getMessage(), e);

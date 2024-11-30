@@ -8,8 +8,7 @@ import static com.javarush.stepanov.constant.Constant.EXCEPTION_ILLEGAL_COMMAND;
 public enum Actions {
     DECODE(new Decode()),
     ENCODE(new Encode ()),
-    BRUDEFORCE(new BrudeForce()),
-    ANALIZE(new Analize());
+    BRUDEFORCE(new BrudeForce());
 
     private final Action action;
 
