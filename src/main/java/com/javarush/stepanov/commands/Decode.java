@@ -5,12 +5,10 @@ import com.javarush.stepanov.model.ResultCode;
 
 import static com.javarush.stepanov.constant.Constant.*;
 
-public class Decode extends AbstractAction{
+public class Decode extends AbstractAction {
     @Override
     public Result execute(String[] parametrs) {
-        codingToFileByKey(parametrs);
+        writeToFileByKey(parametrs);
         return new Result(RESULT_DECODE_OK_MESSAGE, ResultCode.OK);
     }
-
-
 }

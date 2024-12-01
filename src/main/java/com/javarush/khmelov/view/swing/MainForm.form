@@ -48,19 +48,6 @@
               <text value="а"/>
             </properties>
           </component>
-          <component id="8a325" class="javax.swing.JTextField" binding="ch1">
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="-1"/>
-              </grid>
-              <gridbag top="0" left="25" bottom="25" right="25" weightx="0.0" weighty="0.0"/>
-            </constraints>
-            <properties>
-              <font style="1"/>
-              <horizontalAlignment value="0"/>
-              <text value="а"/>
-            </properties>
-          </component>
           <component id="64b9f" class="javax.swing.JButton" binding="swap">
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -86,6 +73,19 @@
             </constraints>
             <properties>
               <text value="Second Character"/>
+            </properties>
+          </component>
+          <component id="8a325" class="javax.swing.JTextField" binding="ch1">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+              <gridbag top="0" left="25" bottom="25" right="25" weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <font style="1"/>
+              <horizontalAlignment value="0"/>
+              <text value="а"/>
             </properties>
           </component>
         </children>

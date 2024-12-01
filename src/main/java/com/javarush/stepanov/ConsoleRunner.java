@@ -13,7 +13,7 @@ public class ConsoleRunner {
         Scanner scanner = new Scanner(System.in);
         Menu menu = new Menu(scanner);
         MainController mainController = new MainController();
-        ConsoleApplication application = new ConsoleApplication(menu,mainController);
+        ConsoleApplication application = new ConsoleApplication(menu, mainController);
         application.run(args);
     }
 }

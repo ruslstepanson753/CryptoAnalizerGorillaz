@@ -7,7 +7,7 @@ import static com.javarush.stepanov.constant.Constant.EXCEPTION_ILLEGAL_COMMAND;
 
 public enum Actions {
     DECODE(new Decode()),
-    ENCODE(new Encode ()),
+    ENCODE(new Encode()),
     BRUDEFORCE(new BrudeForce());
 
     private final Action action;
@@ -20,9 +20,8 @@ public enum Actions {
         try {
             Actions actions = Actions.valueOf(actionName.toUpperCase());
             return actions.action;
-
-        }catch (IllegalArgumentException e) {
-            throw new AppException(EXCEPTION_ILLEGAL_COMMAND+actionName,e);
+        } catch (IllegalArgumentException e) {
+            throw new AppException(EXCEPTION_ILLEGAL_COMMAND + actionName, e);
         }
     }
 }

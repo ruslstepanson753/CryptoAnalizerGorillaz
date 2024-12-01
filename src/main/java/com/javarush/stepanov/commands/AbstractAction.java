@@ -12,39 +12,36 @@ import static com.javarush.stepanov.constant.Constant.*;
 abstract class AbstractAction implements Action {
 
     protected char correctCharByTheKey(char currentChar, int key) {
-        if (ALPHABET.contains(String.valueOf(currentChar))){
+        if (ALPHABET.contains(String.valueOf(currentChar))) {
             int indOfCurrentChar = ALPHABET.indexOf(currentChar);
-            int indOfDecoderedChar = indOfCurrentChar-key;
-            if (indOfDecoderedChar < 0){
+            int indOfDecoderedChar = indOfCurrentChar - key;
+            if (indOfDecoderedChar < 0) {
                 indOfDecoderedChar += ALPHABET.length();
             }
-            if (indOfDecoderedChar >= ALPHABET.length()){
+            if (indOfDecoderedChar >= ALPHABET.length()) {
                 indOfDecoderedChar -= ALPHABET.length();
             }
             return ALPHABET.charAt(indOfDecoderedChar);
-
-        }else {
+        } else {
             return currentChar;
         }
     }
 
-    protected void codingToFileByKey(String[] parametrs) {
-        String textFilePath = TXT_FOLDER+ parametrs[0];
-        String encryptedFilePath = TXT_FOLDER+ parametrs[1];
+    protected void writeToFileByKey(String[] parametrs) {
+        String textFilePath = TXT_FOLDER + parametrs[0];
+        String encryptedFilePath = TXT_FOLDER + parametrs[1];
         int keyOfEncode = Integer.parseInt(parametrs[2]);
-        try(BufferedReader reader = new BufferedReader(new FileReader(textFilePath));
-            BufferedWriter writer = new BufferedWriter(new FileWriter(encryptedFilePath)))
-        {
-            while (reader.ready()){
-                char charToEncode = (char)reader.read();
-                char encodedChar = correctCharByTheKey(charToEncode,keyOfEncode);
+        try (BufferedReader reader = new BufferedReader(new FileReader(textFilePath));
+             BufferedWriter writer = new BufferedWriter(new FileWriter(encryptedFilePath))) {
+            while (reader.ready()) {
+                char charToEncode = (char) reader.read();
+                char encodedChar = correctCharByTheKey(charToEncode, keyOfEncode);
                 writer.write(encodedChar);
             }
-
         } catch (FileNotFoundException e) {
-            throw new AppException(EXCEPTION_FILE_READ_WRITE,e);
+            throw new AppException(EXCEPTION_FILE_READ_WRITE, e);
         } catch (IOException e) {
-            throw new AppException(EXCEPTION_FILE_READ_WRITE,e);
+            throw new AppException(EXCEPTION_FILE_READ_WRITE, e);
         }
     }
 
@@ -56,7 +53,7 @@ abstract class AbstractAction implements Action {
         return countOfSimbols;
     }
 
-    protected     @NotNull Map<Character, Integer> getSortedMap(SortedMap<Character, Integer> countOfSimbolsInEncodedText) {
+    protected @NotNull Map<Character, Integer> getSortedMap(SortedMap<Character, Integer> countOfSimbolsInEncodedText) {
         Map<Character, Integer> sortedMap = countOfSimbolsInEncodedText.entrySet().stream()
                 .sorted(Comparator.comparingInt(e -> -e.getValue()))
                 .collect(Collectors.toMap(
@@ -69,21 +66,20 @@ abstract class AbstractAction implements Action {
     }
 
     protected void toCountTheNumberOfCharacters(String textFilePath, SortedMap<Character, Integer> countOfSimbolsInEncodedText) {
-        try(BufferedReader reader = new BufferedReader(new FileReader(textFilePath)))
-        {
-            while (reader.ready()){
-                char charToEncode = (char)reader.read();
-                if(countOfSimbolsInEncodedText.containsKey(charToEncode)){
+        try (BufferedReader reader = new BufferedReader(new FileReader(textFilePath))) {
+            while (reader.ready()) {
+                char charToEncode = (char) reader.read();
+                if (countOfSimbolsInEncodedText.containsKey(charToEncode)) {
                     Integer inte = countOfSimbolsInEncodedText.get(Character.valueOf(charToEncode));
-                    inte+=1;
+                    inte += 1;
                     countOfSimbolsInEncodedText.put(Character.valueOf(charToEncode), inte);
                 }
             }
 
         } catch (FileNotFoundException e) {
-            throw new AppException(EXCEPTION_FILE_READ_WRITE,e);
+            throw new AppException(EXCEPTION_FILE_READ_WRITE, e);
         } catch (IOException e) {
-            throw new AppException(EXCEPTION_FILE_READ_WRITE,e);
+            throw new AppException(EXCEPTION_FILE_READ_WRITE, e);
         }
     }
 

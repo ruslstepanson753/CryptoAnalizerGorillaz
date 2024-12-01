@@ -5,7 +5,8 @@ target/
 !**/src/test/**/out/
 *.iml
 .idea/
-
+*.log
+*.class
 
 ### Mac OS ###
 .DS_Store

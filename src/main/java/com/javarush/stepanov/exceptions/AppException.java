@@ -1,8 +1,7 @@
 package com.javarush.stepanov.exceptions;
 
 public class AppException extends RuntimeException {
-    public AppException() {
-    }
+    public AppException() {super();}
 
     public AppException(String message) {
         super(message);

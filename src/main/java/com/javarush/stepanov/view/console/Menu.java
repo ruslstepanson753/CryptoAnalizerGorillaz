@@ -12,16 +12,15 @@ public class Menu {
 
     public Menu(Scanner scanner) {
         this.scanner = scanner;
-
     }
 
-    public String[] getArgs() {
+    protected String[] getArgs() {
         String command = getCommand();
         String[] argsWithoutCommand = switch (command) {
             case "encode" -> getEnArgs();
             case "decode" -> getDeArgs();
             case "brudeforce" -> getBrArgs();
-            default -> throw new IllegalStateException(EXCEPTION_ILLEGAL_COMMAND+ command);
+            default -> throw new IllegalStateException(EXCEPTION_ILLEGAL_COMMAND + command);
         };
         String[] args = new String[argsWithoutCommand.length + 1];
         args[0] = command;
@@ -30,7 +29,7 @@ public class Menu {
     }
 
     private String[] getBrArgs() {
-        String[] args= new String[2];
+        String[] args = new String[2];
         System.out.println(CONSOLE_ENCRYPTED_SOURCE_HELP);
         args[0] = scanner.nextLine();
         System.out.println(CONSOLE_TO_DECRYPT_SOURCE_HELP);
@@ -40,7 +39,7 @@ public class Menu {
     }
 
     private String[] getDeArgs() {
-        String[] args= new String[3];
+        String[] args = new String[3];
         System.out.println(CONSOLE_ENCRYPTED_SOURCE_HELP);
         args[0] = scanner.nextLine();
         System.out.println(CONSOLE_TO_DECRYPT_SOURCE_HELP);
@@ -62,7 +61,7 @@ public class Menu {
     }
 
     private String[] getEnArgs() {
-        String[] args= new String[3];
+        String[] args = new String[3];
         System.out.println(CONSOLE_DECRYPTED_SOURCE_HELP);
         args[0] = scanner.nextLine();
         System.out.println(CONSOLE_TO_ENCRYPT_SOURCE_HELP);
@@ -73,13 +72,12 @@ public class Menu {
         return args;
     }
 
-    public void viewResult(Result result) {
+    protected void viewResult(Result result) {
         System.out.printf("%s\n%s\n%s",
                 result.toString(),
                 CONSOLE_RESULT_HELP,
                 fileResultName
         );
-
     }
 
 }
