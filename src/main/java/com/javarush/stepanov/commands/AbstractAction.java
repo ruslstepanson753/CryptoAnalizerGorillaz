@@ -1,13 +1,11 @@
 package com.javarush.stepanov.commands;
-
 import com.javarush.stepanov.exceptions.AppException;
 import org.jetbrains.annotations.NotNull;
-
 import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
-
 import static com.javarush.stepanov.constant.Constant.*;
+
 
 abstract class AbstractAction implements Action {
 
